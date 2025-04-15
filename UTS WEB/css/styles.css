@@ -543,33 +543,59 @@
       display: block;
     }
     
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100vh;
-      background-color: #fff;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: right 0.4s ease;
-      z-index: 99;
-      display: flex;
-      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-links.active {
-      right: 0;
-    }
-    
     .nav-links a {
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-      display: block;
-      color: #273d4d !important;
+      color: #273d4d;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: all 0.3s;
     }
     
+    .navbar.scrolled .nav-links a {
+      color: white;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #5dabdc;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #5dabdc;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #273d4d;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled .menu-toggle span {
+      background-color: white;
+    }
+        
     .menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 6px);
     }
@@ -645,10 +671,10 @@
   @media screen and (max-width: 560px) {
     /* Very small screens & common Android widths */
     .navbar {
-      padding: center;
+      padding: 1px 10%;
     }
     .profile-name {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     
     .section-title {
@@ -688,9 +714,10 @@
     /* Add a larger touch area for mobile taps */
     .nav-links a, 
     .category-button {
-      min-height: 44px;
+      font-size: 1rem;
+      min-height: 20px;
       display: flex;
-      align-items: center;
+      align-items: 30px;
       justify-content: center;
     }
   }
