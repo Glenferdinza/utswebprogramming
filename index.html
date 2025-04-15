@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile & Restaurant Menu</title>
+    <link rel="stylesheet" href="UTS WEB/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>UTS Pemograman Web</h1>
+        <div class="nav-links">
+            <a href="#profile">Profile</a>
+            <a href="#menu">Restaurant Menu</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <section id="profile" class="profile-section">
+            <h2 class="section-title">My Profile</h2>
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="UTS WEB/img/glen.jpg" alt="Profile Picture">
+                </div>
+                <div class="profile-details">
+                    <div class="marquee-container">
+                        <h3 class="profile-name">Glenferdinza Aghis Asyadda Rayndika Efian</h3>
+                    </div>
+                    <div class="profile-bio">
+                        <p>Hello! I'm Glenferdinza, a passionate Machine Learning Engineer and Web Developer that currently resides in Yogyakarta University State. I specialize in creating ML Model and making web applications that deliver exceptional experiences.</p>
+                        
+                        <p>With a background in Information Technology and a love for coding, I've combined my technical skills with my passion for innovation to create unique solutions that drive business growth and improve lives.</p>
+                    </div>
+                    <div class="hobbies-list">
+                        <h4 class="hobbies-title">My Hobbies</h4>
+                        <ul>
+                            <li>Web Development & Programming</li>
+                            <li>Creating a ML Model</li>
+                            <li>Reading a Story Book</li>
+                            <li>Listening to Music</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Menu Section -->
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">Our Restaurant Menu</h2>
+            
+            <div class="menu-categories">
+                <button class="category-button active" data-category="all">All</button>
+                <button class="category-button" data-category="appetizer">Appetizers</button>
+                <button class="category-button" data-category="main">Main Course</button>
+                <button class="category-button" data-category="dessert">Desserts</button>
+                <button class="category-button" data-category="drink">Drinks</button>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Menu Item 1 -->
+                <div class="menu-item" data-category="appetizer">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/Truuffle.png" alt="Truggle Mushroom Arancini">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Truffle Mushroom Arancini</h3>
+                        <p class="item-description">Fried risotto balls with wild mushrooms, black truffle oil & parmesan cream.</p>
+                        <p class="item-price">$19.99</p>
+                    </div>
+                </div>
+                <!-- Menu Item 2 -->
+                <div class="menu-item" data-category="appetizer">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/Seared.png" alt="Seared Scallops on Cauliflower Purée">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Seared Scallops on Cauliflower Purée</h3>
+                        <p class="item-description">Topped with crispy pancetta and microgreens.</p>
+                        <p class="item-price">$23.99</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-item" data-category="main">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/Seafood.png" alt="Black Ink Seafood Linguine">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Black Ink Seafood Linguine</h3>
+                        <p class="item-description">Squid ink pasta with scallops, prawns & garlic chili oil.</p>
+                        <p class="item-price">$17.99</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-item" data-category="dessert">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/coklat.png" alt="Chocolate Lava Cake">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Chocolate Lava Cake</h3>
+                        <p class="item-description">Warm chocolate cake with a molten center, served with vanilla ice cream and fresh berries.</p>
+                        <p class="item-price">$9.99</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="menu-item" data-category="appetizer">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/crispy.png" alt="Crispy Calamari">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Crispy Calamari</h3>
+                        <p class="item-description">Tender calamari lightly breaded and fried, served with marinara sauce and lemon wedges.</p>
+                        <p class="item-price">$12.99</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="menu-item" data-category="main">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/burger.png" alt="Classic Burger">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Classic Burger</h3>
+                        <p class="item-description">8oz Angus beef patty with lettuce, tomato, onion, and special sauce on a brioche bun. Served with fries.</p>
+                        <p class="item-price">$16.99</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="menu-item" data-category="drink">
+                    <div class="item-image">
+                        <img src="UTS WEB/img/Lavender.png" alt="Mocktail: Lavender Citrus Fizz">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Mocktail: Lavender Citrus Fizz</h3>
+                        <p class="item-description">A refreshing blend of lavender, lemon, and sparkling water with a floral twist.</p>
+                        <p class="item-price">$9.99</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 UTS Pemograman Web - Glenferdinza A_24051130005
+    </footer>
+    <script src="UTS WEB/javascript/script.js"></script>
+</body>
+</html>

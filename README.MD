@@ -1,12 +1,12 @@
-# Website Profil diri dan Daftar Menu Makanan Restoran
+# Website Restoran Interaktif
 
-Ini adalah proyek tengah semester saya untuk mata kuliah Pemograman Web. Saya telah membuat sebuah website mengenai Profile saya dan Daftar Menu makanan sesuai dengan deskripsi yang telah diberikan 
+Halo! Ini adalah proyek tengah semester saya untuk mata kuliah Pengembangan Web. Saya telah membuat sebuah website restoran dengan animasi keren dan elemen interaktif.
 
 ## Yang Saya Buat
 
 Saya membangun website ini dari awal menggunakan HTML, CSS, dan JavaScript. Fitur-fiturnya antara lain:
 
-- Navbar yang berubah ketika di-scroll 
+- Navbar yang berubah ketika di-scroll (cobalah!)
 - Animasi yang muncul saat halaman di-scroll ke bawah
 - Sistem filter menu sehingga bisa melihat kategori makanan berbeda
 - Bagian profil dengan informasi tentang chef
@@ -14,7 +14,7 @@ Saya membangun website ini dari awal menggunakan HTML, CSS, dan JavaScript. Fitu
 
 ## Akses Cepat
 
-Untuk melihat website tanpa perlu mengunduh, silakan klik link ini: [https://gsya.my.id/utswebprogramming/]
+Untuk melihat website tanpa perlu mengunduh, silakan klik link ini: []
 
 ## Cara Menggunakan
 
