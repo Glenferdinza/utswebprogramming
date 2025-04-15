@@ -1,6 +1,6 @@
-# Website Profile dan Daftar Menu Makanan
+# Website Profiles dan Daftar Menu Makanan
 
-Ini adalah proyek tengah semester saya untuk mata kuliah Pemograman Web. Disini saya membuat website yang disesuaikan dengan perintah di Goggle Classroom yaitu membuat Website mengenai profile diri dan juga Daftar Menu Makanan.
+Ini adalah proyek tengah semester saya untuk mata kuliah Pemograman Web. Disini saya membuat website yang disesuaikan dengan perintah di Goggle Classroom yaitu membuat Website mengenai data diri dan juga Daftar Menu Makanan.
 
 ## Yang Saya Buat
 
