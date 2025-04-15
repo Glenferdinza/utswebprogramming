@@ -1,12 +1,12 @@
-# Website Restoran Interaktif
+# Website Profile dan Daftar Menu Makanan
 
-Halo! Ini adalah proyek tengah semester saya untuk mata kuliah Pengembangan Web. Saya telah membuat sebuah website restoran dengan animasi keren dan elemen interaktif.
+Ini adalah proyek tengah semester saya untuk mata kuliah Pemograman Web. Disini saya membuat website yang disesuaikan dengan perintah di Goggle Classroom yaitu membuat Website mengenai profile diri dan juga Daftar Menu Makanan.
 
 ## Yang Saya Buat
 
 Saya membangun website ini dari awal menggunakan HTML, CSS, dan JavaScript. Fitur-fiturnya antara lain:
 
-- Navbar yang berubah ketika di-scroll (cobalah!)
+- Navbar yang berubah ketika di-scroll
 - Animasi yang muncul saat halaman di-scroll ke bawah
 - Sistem filter menu sehingga bisa melihat kategori makanan berbeda
 - Bagian profil dengan informasi tentang chef
