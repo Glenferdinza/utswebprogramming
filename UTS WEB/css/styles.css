@@ -442,6 +442,648 @@ footer::before {
     background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
 }
 
+/* CSS untuk perangkat Android */
+
+/* Ponsel Android Kecil (Galaxy S5, dll) */
+@media screen and (max-width: 360px) {
+    /* Container */
+    .container {
+        padding: 4rem 1rem 1rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .section-title:after {
+        width: 80px;
+        height: 3px;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 250px;
+    }
+    
+    .profile-image img {
+        height: 250px;
+    }
+    
+    .profile-details {
+        padding: 1.2rem;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+    }
+    
+    .profile-bio p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hobbies-title {
+        font-size: 1.1rem;
+    }
+    
+    .hobbies-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Menu section */
+    .menu-categories {
+        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .category-button {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 160px;
+    }
+    
+    .item-info {
+        padding: 1rem;
+    }
+    
+    .item-name {
+        font-size: 1.1rem;
+    }
+    
+    .item-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .item-price {
+        font-size: 1rem;
+    }
+    
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem 5%;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.6rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links a {
+        margin-left: 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.2rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ponsel Android Medium (Pixel, OnePlus, dll) */
+@media screen and (min-width: 361px) and (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 4.5rem 1.2rem 1.2rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.8rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 280px;
+    }
+    
+    .profile-image img {
+        height: 280px;
+    }
+    
+    .profile-name {
+        font-size: 1.6rem;
+    }
+    
+    /* Menu grid 1 kolom dengan item yang lebih besar */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    
+    .item-image {
+        height: 180px;
+    }
+}
+
+/* Ponsel Android Besar (Note, S-Ultra, dll) */
+@media screen and (min-width: 481px) and (max-width: 599px) {
+    /* Container */
+    .container {
+        padding: 5rem 1.5rem 1.5rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 320px;
+    }
+    
+    .profile-image img {
+        height: 320px;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    /* Menu grid, 1 kolom tapi lebih besar */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .item-image {
+        height: 200px;
+    }
+    
+    /* Category buttons */
+    .category-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Android Kecil */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    /* Container */
+    .container {
+        padding: 5rem 1.5rem 1.5rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 350px;
+    }
+    
+    /* Menu grid 2 kolom */
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 160px;
+    }
+}
+
+/* Tablet Android Besar (landscape) */
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+    /* Penyesuaian untuk landscape mode */
+    .profile-content {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 250px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 150px;
+    }
+}
+
+/* Untuk device dengan pixel ratio tinggi (layar Retina/high DPI) */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+    /* Memastikan text tetap tajam di layar high density */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Memastikan transisi animasi berjalan mulus */
+    .menu-item, .profile-image, .category-button {
+        transform: translateZ(0); /* Aktifkan hardware acceleration */
+    }
+}
+
+/* Untuk browser Android Chrome dan Firefox */
+@supports (-webkit-appearance:none) or (appearance:none) {
+    /* Touch optimized button */
+    .category-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+    }
+    
+    /* Memastikan scrolling halus */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Untuk orientasi potrait khusus Android */
+@media screen and (max-width: 991px) and (orientation: portrait) {
+    /* Navbar */
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    
+    /* Penyesuaian spasi untuk orientasi portrait */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Fix untuk keyboard Android yang bisa mendorong viewport */
+@media screen and (max-height: 500px) and (max-width: 991px) {
+    .navbar {
+        position: absolute;
+    }
+}
+
+/* CSS untuk perangkat Android */
+
+/* Ponsel Android Kecil (Galaxy S5, dll) */
+@media screen and (max-width: 360px) {
+    /* Container */
+    .container {
+        padding: 4rem 1rem 1rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .section-title:after {
+        width: 80px;
+        height: 3px;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 250px;
+    }
+    
+    .profile-image img {
+        height: 250px;
+    }
+    
+    .profile-details {
+        padding: 1.2rem;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+    }
+    
+    .profile-bio p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hobbies-title {
+        font-size: 1.1rem;
+    }
+    
+    .hobbies-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Menu section */
+    .menu-categories {
+        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+    }
+    
+    .category-button {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 160px;
+    }
+    
+    .item-info {
+        padding: 1rem;
+    }
+    
+    .item-name {
+        font-size: 1.1rem;
+    }
+    
+    .item-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .item-price {
+        font-size: 1rem;
+    }
+    
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem 5%;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.6rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links a {
+        margin-left: 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.2rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ponsel Android Medium (Pixel, OnePlus, dll) */
+@media screen and (min-width: 361px) and (max-width: 480px) {
+    /* Container */
+    .container {
+        padding: 4.5rem 1.2rem 1.2rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.8rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 280px;
+    }
+    
+    .profile-image img {
+        height: 280px;
+    }
+    
+    .profile-name {
+        font-size: 1.6rem;
+    }
+    
+    /* Menu grid 1 kolom dengan item yang lebih besar */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    
+    .item-image {
+        height: 180px;
+    }
+}
+
+/* Ponsel Android Besar (Note, S-Ultra, dll) */
+@media screen and (min-width: 481px) and (max-width: 599px) {
+    /* Container */
+    .container {
+        padding: 5rem 1.5rem 1.5rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 320px;
+    }
+    
+    .profile-image img {
+        height: 320px;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    /* Menu grid, 1 kolom tapi lebih besar */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .item-image {
+        height: 200px;
+    }
+    
+    /* Category buttons */
+    .category-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Android Kecil */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    /* Container */
+    .container {
+        padding: 5rem 1.5rem 1.5rem;
+    }
+    
+    /* Profile section */
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 100%;
+        max-width: 350px;
+    }
+    
+    /* Menu grid 2 kolom */
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 160px;
+    }
+}
+
+/* Tablet Android Besar (landscape) */
+@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+    /* Penyesuaian untuk landscape mode */
+    .profile-content {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .profile-image {
+        flex: 0 0 250px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .item-image {
+        height: 150px;
+    }
+}
+
+/* Untuk device dengan pixel ratio tinggi (layar Retina/high DPI) */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+    /* Memastikan text tetap tajam di layar high density */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Memastikan transisi animasi berjalan mulus */
+    .menu-item, .profile-image, .category-button {
+        transform: translateZ(0); /* Aktifkan hardware acceleration */
+    }
+}
+
+/* Untuk browser Android Chrome dan Firefox */
+@supports (-webkit-appearance:none) or (appearance:none) {
+    /* Touch optimized button */
+    .category-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+    }
+    
+    /* Memastikan scrolling halus */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Untuk orientasi potrait khusus Android */
+@media screen and (max-width: 991px) and (orientation: portrait) {
+    /* Navbar */
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    
+    /* Penyesuaian spasi untuk orientasi portrait */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Fix untuk keyboard Android yang bisa mendorong viewport */
+@media screen and (max-height: 500px) and (max-width: 991px) {
+    .navbar {
+        position: absolute;
+    }
+}
+
 /* Hidden class for filtering */
 .hidden {
     display: none;
