@@ -1,103 +1,127 @@
+/* Base styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
-}
-
-body {
-    background-color: #f8f9fa;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f7f9fc;
+    line-height: 1.6;
     overflow-x: hidden;
-}
-
-/* Navbar with scroll effect */
-.navbar {
-    background-color: rgba(44, 62, 80, 0);
-    color: #2c3e50;
-    padding: 1.5rem 10%;
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on Android */
+  }
+  
+  /* Navbar with scroll effect */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 10%;
+    background-color: rgba(39, 55, 77, 0);
+    color: #273d4d;
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
     z-index: 100;
     transition: all 0.4s ease;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
-
-.navbar.scrolled {
-    color : white;
-    background-color: rgba(44, 62, 80, 0.95);
+  }
+  
+  .navbar.scrolled {
+    color: white;
+    background-color: rgba(39, 55, 77, 0.95);
     padding: 1rem 10%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
+  }
+  
+  .navbar h1, .logo {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-}
-
-.nav-links a {
-    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: #273d4d;
     text-decoration: none;
     margin-left: 2rem;
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
     transition: all 0.3s;
-}
-
-.navbar.scrolled .nav-links a {
+  }
+  
+  .navbar.scrolled .nav-links a {
     color: white;
-}
-
-.nav-links a::after {
+  }
+  
+  .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #3498db;
+    background-color: #5dabdc;
     bottom: 0;
     left: 0;
     transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #3498db;
-}
-
-.nav-links a:hover::after {
+  }
+  
+  .nav-links a:hover {
+    color: #5dabdc;
+  }
+  
+  .nav-links a:hover::after {
     width: 100%;
-}
-
-/* Main content container */
-.container {
+  }
+  
+  /* Mobile menu toggle */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #273d4d;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled .menu-toggle span {
+    background-color: white;
+  }
+  
+  /* Container */
+  .container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 6rem 2rem 2rem;
-}
-
-/* Section titles with animation */
-.section-title {
+  }
+  
+  /* Section styling with animation */
+  .section-title {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #273d4d;
     position: relative;
     padding-bottom: 1.2rem;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
-}
-
-.section-title.visible {
+  }
+  
+  .section-title.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.section-title:after {
+  }
+  
+  .section-title:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -105,145 +129,151 @@ body {
     transform: translateX(-50%);
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, #3498db, #2980b9);
+    background: linear-gradient(90deg, #5dabdc, #4c91bd);
     border-radius: 2px;
-}
-
-/* Profile Section */
-.profile-section {
+  }
+  
+  /* Profile section */
+  .profile-section {
     margin-bottom: 5rem;
-}
-
-.profile-content {
+  }
+  
+  .profile-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 3rem;
+    align-items: flex-start;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease 0.2s;
-}
-
-.profile-content.visible {
+  }
+  
+  .profile-content.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-@media (min-width: 768px) {
-    .profile-content {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-}
-
-.profile-image {
+  }
+  
+  .profile-image {
     flex: 0 0 350px;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.5s ease;
-}
-
-.profile-image:hover {
+    /* Add this line to ensure no white gap */
+    line-height: 0;
+  }
+  
+  .profile-image:hover {
     transform: scale(1.03);
-}
-
-.profile-image img {
+  }
+  
+  .profile-image img {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
-}
-
-.profile-image:hover img {
+    display: block;
+  }
+  
+  .profile-image:hover img {
     transform: scale(1.1);
-}
-
-.profile-details {
+  }
+  
+  .profile-details {
     flex: 1;
     background-color: white;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
-    margin-bottom: 1.5rem;
-}
-
-.profile-name {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+  }
+  
+  /* Replacing marquee with a nicer text highlight effect */
+  .name-highlight {
+    position: relative;
     display: inline-block;
-    animation: marquee 15s linear infinite;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-.profile-bio p {
+  }
+  
+  .profile-name {
+    font-size: 2.2rem;
+    color: #273d4d;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #5dabdc;
+    transition: width 0.5s ease;
+  }
+  
+  .name-highlight:hover .profile-name::after {
+    width: 100%;
+  }
+  
+  .profile-bio p {
     margin-bottom: 1.2rem;
     line-height: 1.8;
     color: #555;
     font-size: 1.05rem;
-}
-
-.hobbies-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    color: #2c3e50;
+  }
+  
+  .hobbies-title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    color: #273d4d;
     position: relative;
     display: inline-block;
-}
-
-.hobbies-title::after {
+  }
+  
+  .hobbies-title::after {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
     width: 50px;
     height: 3px;
-    background-color: #3498db;
-}
-
-.hobbies-list ul {
+    background-color: #5dabdc;
+  }
+  
+  .hobbies-list ul {
     list-style: none;
     margin-left: 0.5rem;
-}
-
-.hobbies-list li {
+  }
+  
+  .hobbies-list li {
     margin-bottom: 0.7rem;
     color: #555;
     position: relative;
     padding-left: 1.5rem;
     transition: transform 0.3s ease;
-}
-
-.hobbies-list li:hover {
+  }
+  
+  .hobbies-list li:hover {
     transform: translateX(5px);
-}
-
-.hobbies-list li::before {
+  }
+  
+  .hobbies-list li::before {
     content: '•';
     position: absolute;
     left: 0;
-    color: #3498db;
+    color: #5dabdc;
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-/* Menu Section */
-.menu-section {
+  }
+  
+  /* Menu section */
+  .menu-section {
     padding-top: 3rem;
-}
-
-.menu-categories {
+  }
+  
+  .menu-categories {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -252,17 +282,17 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease 0.3s;
-}
-
-.menu-categories.visible {
+  }
+  
+  .menu-categories.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.category-button {
-    background-color: #f8f9fa;
-    border: 2px solid #3498db;
-    color: #3498db;
+  }
+  
+  .category-button {
+    background-color: #f7f9fc;
+    border: 2px solid #5dabdc;
+    color: #5dabdc;
     padding: 0.7rem 2rem;
     border-radius: 50px;
     cursor: pointer;
@@ -271,50 +301,52 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-}
-
-.category-button:before {
+  }
+  
+  .category-button:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #3498db;
+    background-color: #5dabdc;
     transition: all 0.3s;
     z-index: -1;
-}
-
-.category-button:hover:before {
+  }
+  
+  .category-button:hover:before,
+  .category-button:active:before {
     width: 100%;
-}
-
-.category-button:hover {
+  }
+  
+  .category-button:hover,
+  .category-button:active {
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 7px 15px rgba(52, 152, 219, 0.25);
-}
-
-.category-button.active {
-    background-color: #3498db;
+    box-shadow: 0 7px 15px rgba(93, 171, 220, 0.25);
+  }
+  
+  .category-button.active {
+    background-color: #5dabdc;
     color: white;
-}
-
-.menu-grid {
+  }
+  
+  .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2.5rem;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease 0.4s;
-}
-
-.menu-grid.visible {
+  }
+  
+  .menu-grid.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.menu-item {
+  }
+  
+  .menu-item {
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -323,42 +355,42 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s forwards;
-}
-
-@keyframes fadeInUp {
+  }
+  
+  @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(30px);
+      opacity: 0;
+      transform: translateY(30px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-.menu-item:hover {
+  }
+  
+  .menu-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
-}
-
-.item-image {
+  }
+  
+  .item-image {
     height: 220px;
     overflow: hidden;
     position: relative;
-}
-
-.item-image img {
+  }
+  
+  .item-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
-}
-
-.menu-item:hover .item-image img {
+  }
+  
+  .menu-item:hover .item-image img {
     transform: scale(1.1);
-}
-
-.item-image::after {
+  }
+  
+  .item-image::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -368,735 +400,397 @@ body {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
     opacity: 0;
     transition: opacity 0.4s ease;
-}
-
-.menu-item:hover .item-image::after {
+  }
+  
+  .menu-item:hover .item-image::after {
     opacity: 1;
-}
-
-.item-info {
+  }
+  
+  .item-info {
     padding: 1.8rem;
     position: relative;
-}
-
-.item-name {
+  }
+  
+  .item-name {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    color: #2c3e50;
+    color: #273d4d;
     position: relative;
     display: inline-block;
     transition: transform 0.3s ease;
-}
-
-.menu-item:hover .item-name {
+  }
+  
+  .menu-item:hover .item-name {
     transform: translateX(5px);
-}
-
-.item-description {
-    color: #777;
+  }
+  
+  .item-description {
+    color: #666;
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
     line-height: 1.6;
-}
-
-.item-price {
+  }
+  
+  .item-price {
     font-weight: bold;
-    color: #3498db;
+    color: #5dabdc;
     font-size: 1.2rem;
     display: inline-block;
     position: relative;
-}
-
-.item-price::before {
+  }
+  
+  .item-price::before {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #3498db;
+    background-color: #5dabdc;
     transition: width 0.3s ease;
-}
-
-.menu-item:hover .item-price::before {
+  }
+  
+  .menu-item:hover .item-price::before {
     width: 100%;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #273d4d;
     color: white;
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
     position: relative;
-}
-
-footer::before {
+  }
+  
+  footer::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
-}
-
-/* CSS untuk perangkat Android */
-
-/* Ponsel Android Kecil (Galaxy S5, dll) */
-@media screen and (max-width: 360px) {
-    /* Container */
-    .container {
-        padding: 4rem 1rem 1rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 1.7rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.8rem;
-    }
-    
-    .section-title:after {
-        width: 80px;
-        height: 3px;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 250px;
-    }
-    
-    .profile-image img {
-        height: 250px;
-    }
-    
-    .profile-details {
-        padding: 1.2rem;
-    }
-    
-    .profile-name {
-        font-size: 1.5rem;
-    }
-    
-    .profile-bio p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: 0.8rem;
-    }
-    
-    .hobbies-title {
-        font-size: 1.1rem;
-    }
-    
-    .hobbies-list li {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    /* Menu section */
-    .menu-categories {
-        margin-bottom: 1.5rem;
-        gap: 0.5rem;
-    }
-    
-    .category-button {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-    }
-    
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 160px;
-    }
-    
-    .item-info {
-        padding: 1rem;
-    }
-    
-    .item-name {
-        font-size: 1.1rem;
-    }
-    
-    .item-description {
-        font-size: 0.85rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .item-price {
-        font-size: 1rem;
-    }
-    
-    /* Navbar */
-    .navbar {
-        padding: 0.8rem 5%;
-    }
-    
-    .navbar.scrolled {
-        padding: 0.6rem 5%;
-    }
-    
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    .nav-links a {
-        margin-left: 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    /* Footer */
-    footer {
-        padding: 1.2rem;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Ponsel Android Medium (Pixel, OnePlus, dll) */
-@media screen and (min-width: 361px) and (max-width: 480px) {
-    /* Container */
-    .container {
-        padding: 4.5rem 1.2rem 1.2rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 1.8rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.8rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 280px;
-    }
-    
-    .profile-image img {
-        height: 280px;
-    }
-    
-    .profile-name {
-        font-size: 1.6rem;
-    }
-    
-    /* Menu grid 1 kolom dengan item yang lebih besar */
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-    }
-    
-    .item-image {
-        height: 180px;
-    }
-}
-
-/* Ponsel Android Besar (Note, S-Ultra, dll) */
-@media screen and (min-width: 481px) and (max-width: 599px) {
-    /* Container */
-    .container {
-        padding: 5rem 1.5rem 1.5rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 320px;
-    }
-    
-    .profile-image img {
-        height: 320px;
-    }
-    
-    .profile-name {
-        font-size: 1.8rem;
-    }
-    
-    /* Menu grid, 1 kolom tapi lebih besar */
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .item-image {
-        height: 200px;
-    }
-    
-    /* Category buttons */
-    .category-button {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Tablet Android Kecil */
-@media screen and (min-width: 600px) and (max-width: 767px) {
-    /* Container */
-    .container {
-        padding: 5rem 1.5rem 1.5rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 350px;
-    }
-    
-    /* Menu grid 2 kolom */
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 160px;
-    }
-}
-
-/* Tablet Android Besar (landscape) */
-@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
-    /* Penyesuaian untuk landscape mode */
-    .profile-content {
-        flex-direction: row;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 250px;
-    }
-    
-    .menu-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 150px;
-    }
-}
-
-/* Untuk device dengan pixel ratio tinggi (layar Retina/high DPI) */
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (min-resolution: 192dpi) {
-    /* Memastikan text tetap tajam di layar high density */
-    body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    
-    /* Memastikan transisi animasi berjalan mulus */
-    .menu-item, .profile-image, .category-button {
-        transform: translateZ(0); /* Aktifkan hardware acceleration */
-    }
-}
-
-/* Untuk browser Android Chrome dan Firefox */
-@supports (-webkit-appearance:none) or (appearance:none) {
-    /* Touch optimized button */
-    .category-button {
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-        user-select: none;
-    }
-    
-    /* Memastikan scrolling halus */
-    html, body {
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* Untuk orientasi potrait khusus Android */
-@media screen and (max-width: 991px) and (orientation: portrait) {
-    /* Navbar */
-    .navbar {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-    
-    /* Penyesuaian spasi untuk orientasi portrait */
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-/* Fix untuk keyboard Android yang bisa mendorong viewport */
-@media screen and (max-height: 500px) and (max-width: 991px) {
-    .navbar {
-        position: absolute;
-    }
-}
-
-/* CSS untuk perangkat Android */
-
-/* Ponsel Android Kecil (Galaxy S5, dll) */
-@media screen and (max-width: 360px) {
-    /* Container */
-    .container {
-        padding: 4rem 1rem 1rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 1.7rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.8rem;
-    }
-    
-    .section-title:after {
-        width: 80px;
-        height: 3px;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 250px;
-    }
-    
-    .profile-image img {
-        height: 250px;
-    }
-    
-    .profile-details {
-        padding: 1.2rem;
-    }
-    
-    .profile-name {
-        font-size: 1.5rem;
-    }
-    
-    .profile-bio p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: 0.8rem;
-    }
-    
-    .hobbies-title {
-        font-size: 1.1rem;
-    }
-    
-    .hobbies-list li {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    /* Menu section */
-    .menu-categories {
-        margin-bottom: 1.5rem;
-        gap: 0.5rem;
-    }
-    
-    .category-button {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-    }
-    
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 160px;
-    }
-    
-    .item-info {
-        padding: 1rem;
-    }
-    
-    .item-name {
-        font-size: 1.1rem;
-    }
-    
-    .item-description {
-        font-size: 0.85rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .item-price {
-        font-size: 1rem;
-    }
-    
-    /* Navbar */
-    .navbar {
-        padding: 0.8rem 5%;
-    }
-    
-    .navbar.scrolled {
-        padding: 0.6rem 5%;
-    }
-    
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    .nav-links a {
-        margin-left: 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    /* Footer */
-    footer {
-        padding: 1.2rem;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Ponsel Android Medium (Pixel, OnePlus, dll) */
-@media screen and (min-width: 361px) and (max-width: 480px) {
-    /* Container */
-    .container {
-        padding: 4.5rem 1.2rem 1.2rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 1.8rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.8rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 280px;
-    }
-    
-    .profile-image img {
-        height: 280px;
-    }
-    
-    .profile-name {
-        font-size: 1.6rem;
-    }
-    
-    /* Menu grid 1 kolom dengan item yang lebih besar */
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-    }
-    
-    .item-image {
-        height: 180px;
-    }
-}
-
-/* Ponsel Android Besar (Note, S-Ultra, dll) */
-@media screen and (min-width: 481px) and (max-width: 599px) {
-    /* Container */
-    .container {
-        padding: 5rem 1.5rem 1.5rem;
-    }
-    
-    /* Section titles */
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 320px;
-    }
-    
-    .profile-image img {
-        height: 320px;
-    }
-    
-    .profile-name {
-        font-size: 1.8rem;
-    }
-    
-    /* Menu grid, 1 kolom tapi lebih besar */
-    .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .item-image {
-        height: 200px;
-    }
-    
-    /* Category buttons */
-    .category-button {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Tablet Android Kecil */
-@media screen and (min-width: 600px) and (max-width: 767px) {
-    /* Container */
-    .container {
-        padding: 5rem 1.5rem 1.5rem;
-    }
-    
-    /* Profile section */
-    .profile-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 100%;
-        max-width: 350px;
-    }
-    
-    /* Menu grid 2 kolom */
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 160px;
-    }
-}
-
-/* Tablet Android Besar (landscape) */
-@media screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
-    /* Penyesuaian untuk landscape mode */
-    .profile-content {
-        flex-direction: row;
-        gap: 2rem;
-    }
-    
-    .profile-image {
-        flex: 0 0 250px;
-    }
-    
-    .menu-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .item-image {
-        height: 150px;
-    }
-}
-
-/* Untuk device dengan pixel ratio tinggi (layar Retina/high DPI) */
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (min-resolution: 192dpi) {
-    /* Memastikan text tetap tajam di layar high density */
-    body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    
-    /* Memastikan transisi animasi berjalan mulus */
-    .menu-item, .profile-image, .category-button {
-        transform: translateZ(0); /* Aktifkan hardware acceleration */
-    }
-}
-
-/* Untuk browser Android Chrome dan Firefox */
-@supports (-webkit-appearance:none) or (appearance:none) {
-    /* Touch optimized button */
-    .category-button {
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-        user-select: none;
-    }
-    
-    /* Memastikan scrolling halus */
-    html, body {
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* Untuk orientasi potrait khusus Android */
-@media screen and (max-width: 991px) and (orientation: portrait) {
-    /* Navbar */
-    .navbar {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-    
-    /* Penyesuaian spasi untuk orientasi portrait */
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-/* Fix untuk keyboard Android yang bisa mendorong viewport */
-@media screen and (max-height: 500px) and (max-width: 991px) {
-    .navbar {
-        position: absolute;
-    }
-}
-
-/* Hidden class for filtering */
-.hidden {
+    background: linear-gradient(90deg, #5dabdc, #4c91bd, #5dabdc);
+  }
+  
+  /* Hidden class for filtering */
+  .hidden {
     display: none;
-}
-
-/* Animations for scroll effects */
-.fade-in {
+  }
+  
+  /* Animations for scroll effects */
+  .fade-in {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
+  }
+  
+  .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
+  }
+  
+  /* Media query for half-screen windows and tablets */
+  @media screen and (max-width: 992px) {
+    .container {
+      padding: 5rem 1.5rem 1.5rem;
+    }
+    
+    .profile-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+    
+    .profile-image {
+      flex: 0 0 auto;
+      max-width: 250px;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .profile-name {
+      font-size: 1.8rem;
+    }
+    
+    .hobbies-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .hobbies-list {
+      text-align: left;
+    }
+    
+    .item-image {
+      height: 180px;
+    }
+  }
+  
+  /* Media query for smaller windows and large phones */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 0.8rem 5%;
+    }
+    
+    /* Show hamburger menu */
+    .menu-toggle {
+      display: block;
+    }
+    
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background-color: #fff;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.4s ease;
+      z-index: 99;
+      display: flex;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links a {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      display: block;
+      color: #273d4d !important;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+    
+    /* Overlay for mobile menu */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 98;
+      display: none;
+    }
+    
+    .menu-overlay.active {
+      display: block;
+    }
+    
+    .container {
+      padding: 4.5rem 1rem 1rem;
+    }
+    
+    .menu-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .category-button {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .profile-image {
+      max-width: 200px;
+    }
+    
+    .profile-bio p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Specific styles for Windows snap view */
+  @media screen and (max-width: 860px) and (min-width: 600px) {
+    .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+    
+    .profile-content {
+      gap: 1.5rem;
+    }
+    
+    .navbar h1, .logo {
+      font-size: 1.3rem;
+    }
+    
+    .hobbies-title {
+      font-size: 1.3rem;
+      margin: 1.2rem 0 0.8rem;
+    }
+  }
+  
+  /* Android specific media queries */
+  @media screen and (max-width: 480px) {
+    /* Very small screens & common Android widths */
+    .profile-name {
+      font-size: 1.5rem;
+    }
+    
+    .section-title {
+      font-size: 1.7rem;
+    }
+    
+    .navbar h1, .logo {
+      font-size: 1.1rem;
+    }
+    
+    .menu-categories {
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .category-button {
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+    }
+    
+    .item-info {
+      padding: 1.2rem;
+    }
+    
+    .item-name {
+      font-size: 1.2rem;
+    }
+    
+    .item-description {
+      font-size: 0.9rem;
+    }
+    
+    .profile-details {
+      padding: 1.5rem;
+    }
+    
+    /* Add a larger touch area for mobile taps */
+    .nav-links a, 
+    .category-button {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  /* Small Android phones (Galaxy S8, Pixel 3a, etc.) */
+  @media screen and (max-width: 375px) {
+    .container {
+      padding: 4rem 0.8rem 1rem;
+    }
+    
+    .profile-image {
+      max-width: 180px;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .profile-name {
+      font-size: 1.3rem;
+    }
+    
+    .profile-bio p {
+      font-size: 0.95rem;
+    }
+    
+    .item-image {
+      height: 160px;
+    }
+    
+    .menu-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .category-button {
+      margin-bottom: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      flex: 0 1 auto;
+    }
+    
+    .hobbies-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Fix for Android browsers' address bar resizing */
+  @media screen and (max-height: 600px) {
+    .container {
+      padding-top: 3.5rem;
+    }
+    
+    .navbar {
+      padding: 0.6rem 5%;
+    }
+  }
+  
+  /* Fix for mobile touch */
+  @media (hover: none) {
+    .menu-item:hover {
+      transform: none;
+    }
+    
+    .category-button:hover {
+      transform: none;
+    }
+    
+    /* Instead, use active states for touch */
+    .menu-item:active {
+      transform: translateY(-5px);
+    }
+    
+    .item-name:active {
+      transform: translateX(5px);
+    }
+    
+    /* Improve tap targets */
+    .category-button,
+    .nav-links a {
+      padding: 0.8rem 1.2rem;
+    }
+  }
+  
+  /* Handle notched displays like iPhone X/11/12 */
+  @supports (padding: max(0px)) {
+    .navbar {
+      padding-left: max(5%, env(safe-area-inset-left));
+      padding-right: max(5%, env(safe-area-inset-right));
+    }
+    
+    .container {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+    
+    .nav-links {
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    footer {
+      padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    }
+  }

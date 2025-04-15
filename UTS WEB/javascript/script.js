@@ -1,32 +1,30 @@
-// Tambahkan kode ini ke dalam file JavaScript Anda
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Deteksi Android
+    // Detect Android
     const isAndroid = /Android/i.test(navigator.userAgent);
     
     if (isAndroid) {
-        // Tambahkan class khusus untuk styling Android
+        // Add Android-specific class
         document.body.classList.add('android-device');
         
-        // Optimasi untuk viewport Android
+        // Optimize for Android viewport
         const viewportMeta = document.querySelector('meta[name="viewport"]');
         if (viewportMeta) {
             viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
         } else {
-            // Jika belum ada viewport meta, tambahkan
+            // Add viewport meta if not present
             const meta = document.createElement('meta');
             meta.name = 'viewport';
             meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
             document.head.appendChild(meta);
         }
         
-        // Optimalkan animasi untuk hardware Android
+        // Optimize animations for Android hardware
         const animatedElements = document.querySelectorAll('.menu-item, .profile-image, .fade-in, .section-title');
         animatedElements.forEach(element => {
             element.style.willChange = 'transform, opacity';
         });
         
-        // Optimasi untuk touch events Android - mengatasi masalah delay 300ms
+        // Fix 300ms delay on Android touch events
         const buttons = document.querySelectorAll('.category-button');
         buttons.forEach(button => {
             button.addEventListener('touchstart', function() {
@@ -38,12 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { passive: true });
         });
         
-        // Fix untuk keyboard Android yang mengubah viewport
+        // Fix for Android keyboard adjusting viewport
         const inputs = document.querySelectorAll('input, textarea');
         if (inputs.length > 0) {
             inputs.forEach(input => {
                 input.addEventListener('focus', function() {
-                    // Atur timeout untuk memberi waktu keyboard muncul
                     setTimeout(() => {
                         window.scrollTo(0, window.pageYOffset);
                     }, 300);
@@ -51,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Optimalkan scrolling pada Android dengan throttling
+        // Throttle scrolling for better performance on Android
         let lastScrollTime = 0;
         const navbar = document.querySelector('.navbar');
         
@@ -69,8 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
     }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Navbar scroll effect
+    // Navbar scroll effect for all devices
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', function() {
@@ -121,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button
             this.classList.add('active');
             
-            // Get filter value - using consistent attribute names
+            // Get filter value
             const selectedCategory = this.getAttribute('data-category');
             
             // Filter menu items
@@ -139,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     item.style.animation = '';
                 }, 10);
-                });
             });
         });
     });
