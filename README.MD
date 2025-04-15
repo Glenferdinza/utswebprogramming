@@ -14,7 +14,7 @@ Saya membangun website ini dari awal menggunakan HTML, CSS, dan JavaScript. Fitu
 
 ## Akses Cepat
 
-Untuk melihat website tanpa perlu mengunduh, silakan klik link ini: []
+Untuk melihat website tanpa perlu mengunduh, silakan klik link ini: [https://gsya.my.id/utswebprogramming/]
 
 ## Cara Menggunakan
 
